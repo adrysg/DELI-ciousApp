@@ -6,9 +6,9 @@ import java.util.ArrayList;
 public class Sandwich extends OrderItem {
     //list sandwich price based off size and bread type
 
-    String breadType;
-    String breadSize;
-    boolean isToasted;
+    private String breadType;
+    private String breadSize;
+    private boolean isToasted;
     private ArrayList<String> toppings;
     private ArrayList<String> meats;
     private ArrayList<String> cheeses;
@@ -65,6 +65,10 @@ public class Sandwich extends OrderItem {
         this.meats = meats;
     }
 
+    public void addMeat(String meat){
+        this.meats.add(meat);
+    }
+
     public ArrayList<String> getCheeses() {
         return cheeses;
     }
@@ -93,4 +97,4 @@ public class Sandwich extends OrderItem {
         return 0;
     }
 }
-//
+

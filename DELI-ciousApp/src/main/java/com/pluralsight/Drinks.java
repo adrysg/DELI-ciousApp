@@ -2,9 +2,21 @@ package com.pluralsight;
 
 public class Drinks extends OrderItem {
 
-     double drinkSize;
+     String drinkSize;
 
-    public Drinks(double drinkSize) {
+    public Drinks(String drinkSize) {
+        this.drinkSize = drinkSize;
+    }
+
+    public Drinks() {
+
+    }
+
+    public String getDrinkSize() {
+        return drinkSize;
+    }
+
+    public void setDrinkSize(String drinkSize) {
         this.drinkSize = drinkSize;
     }
 

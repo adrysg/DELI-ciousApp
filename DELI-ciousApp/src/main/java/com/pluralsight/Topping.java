@@ -3,11 +3,11 @@ package com.pluralsight;
 public class Topping extends OrderItem {
 
     //list all toppings based off sandwich size and price
-    String toppingName;
-    boolean hasMeat;
-    boolean hasExtraMeat;
-    boolean hasCheese;
-    boolean hasExtraCheese;
+    private String toppingName;
+    private boolean hasMeat;
+    private boolean hasExtraMeat;
+    private boolean hasCheese;
+    private boolean hasExtraCheese;
 
     public Topping(String toppingName, boolean hasMeat, boolean hasExtraMeat, boolean hasCheese, boolean hasExtraCheese) {
         this.toppingName = toppingName;
