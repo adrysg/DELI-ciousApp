@@ -12,4 +12,11 @@ public class Drinks extends OrderItem {
     public double getCost() {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "Drinks{" +
+                "drinkSize=" + drinkSize +
+                '}';
+    }
 }
