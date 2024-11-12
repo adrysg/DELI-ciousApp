@@ -27,8 +27,7 @@ public class Drinks extends OrderItem {
 
     @Override
     public String toString() {
-        return "Drinks{" +
-                "drinkSize=" + drinkSize +
-                '}';
+        return "Drinks:\n" +
+                "Drink Size: " + drinkSize;
     }
 }
