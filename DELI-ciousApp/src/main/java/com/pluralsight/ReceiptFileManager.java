@@ -10,7 +10,7 @@ import static com.pluralsight.Order.*;
 public class ReceiptFileManager {
     //save order details in a receipts folder
 
-    public ReceiptFileManager() throws IOException {
+    public ReceiptFileManager(Order order) throws IOException {
 
         try {
 
@@ -21,18 +21,14 @@ public class ReceiptFileManager {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
             String formattedDate = now.format(formatter);
 
-            String directoryPath = "receipts";
-
             //assign formatted date to file name
-            String fileName = directoryPath + formattedDate + ".txt";
+            String fileName = "receipts/" + formattedDate + ".txt";
 
-            // using a file writer to create and write to a file
+            // using a file writer to create and write order details to a file
             FileWriter fw = new FileWriter(fileName, true);
+            fw.write(order.toString());
 
-
-            fw.write("Order items:\n " + scanner);
-
-
+            // printing confirmation
             System.out.println("Receipt successfully saved, have a nice day!");
             fw.close(); //closing the file writer
 

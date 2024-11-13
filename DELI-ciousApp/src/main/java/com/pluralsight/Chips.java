@@ -27,7 +27,7 @@ public class Chips extends OrderItem {
     }
 
 
-    static void addChipsToOrder() {
+    static void addChipsToOrder(Order order) {
         System.out.println("What chips would you like to order? ");
 //looping through the list of chips and displaying it to the customer so they can make a selection
         for (int i = 0; i < MenuItems.chips.length; i++) {
@@ -35,6 +35,7 @@ public class Chips extends OrderItem {
         }
         System.out.print("Enter selection: ");
         int selection = Integer.parseInt(scanner.nextLine());
+
 
 
     }

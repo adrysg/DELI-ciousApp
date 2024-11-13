@@ -4,8 +4,8 @@ import static com.pluralsight.Main.scanner;
 
 public class Drinks extends OrderItem {
 
-    String drinkType;
-    String drinkSize;
+    private double price;
+    private String drinkSize;
 
     public Drinks(String drinkSize) {
         this.drinkSize = drinkSize;
@@ -13,14 +13,6 @@ public class Drinks extends OrderItem {
 
     public Drinks() {
 
-    }
-
-    public String getDrinkType() {
-        return drinkType;
-    }
-
-    public void setDrinkType(String drinkType) {
-        this.drinkType = drinkType;
     }
 
     public String getDrinkSize() {
@@ -31,8 +23,11 @@ public class Drinks extends OrderItem {
         this.drinkSize = drinkSize;
     }
 
+    public void setPrice(double price){
+        this.price = price;
+    }
 
-    static void addDrinkToOrder() {
+    static void addDrinkToOrder(Order order) {
         Drinks drink = new Drinks();
         double price = 0;
 
@@ -72,13 +67,20 @@ public class Drinks extends OrderItem {
             price = 3.00;
         }
 
+        // set the price for the drink
+        drink.setPrice(price);
+
+        // add the drink to the order
+        order.addItemToOrder(drink);
 
     }
 
     @Override
     public double getCost() {
-        return 0;
+        return price;
     }
+
+
 
     @Override
     public String toString() {

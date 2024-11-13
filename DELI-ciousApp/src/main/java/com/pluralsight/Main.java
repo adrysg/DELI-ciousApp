@@ -27,7 +27,7 @@ public class Main {
 
             switch (selection) {
                 case 1:
-                    Order.orderScreen();
+                    orderScreen();
                 case 0: {
                     System.out.println("Have a nice day!");
                     return;
@@ -51,13 +51,13 @@ public class Main {
 
             switch (selection) {
                 case 1:
-                    Sandwich.addSandwichToOrder();
+                    Sandwich.addSandwichToOrder(new Order());
                     break;
                 case 2:
-                    Drinks.addDrinkToOrder();
+                    Drinks.addDrinkToOrder(new Order());
                     break;
                 case 3:
-                    Chips.addChipsToOrder();
+                    Chips.addChipsToOrder(new Order());
                     break;
                 case 4:
                     displayCheckout();

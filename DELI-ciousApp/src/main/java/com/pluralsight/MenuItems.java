@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class MenuItems {
 
-    public static final String[] RegToppings = {"lettuce","peppers","Onions","Tomatoes","Jalapenos","Cucumbers","Pickles","Guacamole","Mushrooms"};
+    public static final String[] regToppings = {"lettuce","peppers","Onions","Tomatoes","Jalapenos","Cucumbers","Pickles","Guacamole","Mushrooms"};
     public static final String[] meats = {"Steak","Ham","Salami","Roast Beef","Chicken","Bacon"};
     public static final String[] cheeses = {"American","Provolone","Cheddar","Swiss"};
     public static final String[] chips = {"Lays","Doritos","Fritos","Ruffles","Cheetos"};
