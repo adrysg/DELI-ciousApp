@@ -28,16 +28,6 @@ public class Topping extends OrderItem {
                 } else {
                     System.out.println("Invalid selection. Please try again.");
                 }
-
-//            //asking user if they'd like to add more toppings
-//            System.out.println("----------------");
-//            System.out.print("Would you like to add more (Y or N)?: ");
-//            String choice = scanner.nextLine();
-//
-//            //exiting loop if user doesn't want to add more toppings
-//            if (!choice.equalsIgnoreCase("Y")) {
-//
-//            }
             }
             break;
         }
@@ -118,30 +108,22 @@ public class Topping extends OrderItem {
             System.out.println("Please select your sauce");
 
             //looping through the list of sauces available
-            for (int i = 0; i < MenuItems.sauces.length; i++) {
-                System.out.println(i + 1 + ") " + MenuItems.sauces[i]);
+            for (int i = 0; i < MenuItems.regToppings.length; i++) {
+                System.out.println(i + 1 + ") " + MenuItems.regToppings[i]);
             }
             System.out.print("Selection: ");
-            int selection = Integer.parseInt(scanner.nextLine());
+            String[] selection = scanner.nextLine().split(",");
 
+            for (String selectionInt : selection) {
 
-            //adding selected sauce to sandwich
-            if (selection > 0 && selection <= MenuItems.sauces.length) {
-                String selectedSauce = MenuItems.sauces[selection - 1]; // Get the selected sauce
-                sandwich.addSauce(selectedSauce);
-                System.out.println("You selected: " + selectedSauce);
-                System.out.println("-----------------------------");
-            } else {
-                System.out.println("Invalid selection. Please try again.");
-            }
-
-            //asking user if they'd like to add more sauces
-            System.out.print("Would you like to add more (Y or N)?: ");
-            String choice = scanner.nextLine();
-            System.out.println("-------------------------------------");
-            if (choice.equalsIgnoreCase("Y")) {
-
-
+                //adding selection to sandwich instance
+                if (Integer.parseInt(selectionInt) >= 0 && Integer.parseInt(selectionInt) <= MenuItems.regToppings.length) {
+                    String toppingSelection = MenuItems.regToppings[Integer.parseInt(selectionInt) - 1]; //getting selected topping
+                    sandwich.addTopping(toppingSelection);
+                    System.out.println("You selected: " + toppingSelection);
+                } else {
+                    System.out.println("Invalid selection. Please try again.");
+                }
             }
             //calculating total of all selections
             double totalCost = sandwich.getCost();

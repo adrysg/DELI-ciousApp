@@ -23,10 +23,6 @@ public class Chips extends OrderItem {
         this.type = type;
     }
 
-    public String[] getChipsOptions() {
-        return chips;
-    }
-
     static void addChipsToOrder(Order order) {
         Chips chips = new Chips();
 

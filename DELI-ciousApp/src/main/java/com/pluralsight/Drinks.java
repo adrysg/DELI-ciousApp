@@ -81,7 +81,7 @@ public class Drinks extends OrderItem {
         // add the drink to the order
         order.addItemToOrder(drink);
 
-        System.out.println("You selected a: " + drink.getDrinkSize() + " " + drink.getDrinkName());
+        System.out.println("You selected a " + drink.getDrinkSize() + " " + drink.getDrinkName() + " for the price of $" + drink.getCost());
 
     }
 

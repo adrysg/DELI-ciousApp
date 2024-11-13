@@ -1,0 +1,16 @@
+Order Details: 
+Sandwich: Bread type: White
+Bread size: 8
+isToasted: false
+Toppings: [lettuce, peppers, Onions, Tomatoes]
+Meats: [Chicken]
+Cheeses: [American]
+ Order Total: 12.1
+Drink: Coca-Cola
+Drink Size: Medium
+Price: $2.5
+
+Chips: 
+Chip type: Doritos
+ Chips Total: 1.5
+Order Total: $16.1

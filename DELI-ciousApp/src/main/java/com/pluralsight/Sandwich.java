@@ -87,22 +87,6 @@ public class Sandwich extends OrderItem {
         basePrice += extraCost;
     }
 
-    public ArrayList<String> getToppings(){
-       return toppings;
-    }
-
-    public ArrayList<String> getMeats(){
-       return meats;
-    }
-
-    public ArrayList<String> getCheeses(){
-       return cheeses;
-    }
-
-    public ArrayList<String> getSauces(){
-       return sauces;
-    }
-
    public void addTopping(String topping){
        toppings.add(topping);
    }
