@@ -6,13 +6,14 @@ public class Drinks extends OrderItem {
 
     private double price;
     private String drinkSize;
+    private String drinkName;
 
-    public Drinks(String drinkSize) {
+    public Drinks(String drinkSize, String drinkName) {
         this.drinkSize = drinkSize;
+        this.drinkName = drinkName;
     }
 
     public Drinks() {
-
     }
 
     public String getDrinkSize() {
@@ -21,6 +22,14 @@ public class Drinks extends OrderItem {
 
     public void setDrinkSize(String drinkSize) {
         this.drinkSize = drinkSize;
+    }
+
+    public String getDrinkName(){
+        return drinkName;
+    }
+
+    public void setDrinkName(String drinkName){
+        this.drinkName = drinkName;
     }
 
     public void setPrice(double price){
@@ -39,6 +48,9 @@ public class Drinks extends OrderItem {
         }
         System.out.print("Enter selection: ");
         int selection = Integer.parseInt(scanner.nextLine());
+        drink.setDrinkName(MenuItems.drinks[selection - 1]); //setting drink name based on selection
+
+    //asking for drink size
         System.out.println("Select drink size: ");
         System.out.println("1) Small");
         System.out.println("2) Medium");
@@ -47,24 +59,20 @@ public class Drinks extends OrderItem {
         int size = Integer.parseInt(scanner.nextLine());
         System.out.println("--------------------------");
 
-        // set drink size based on input
+        // set drink size based on selection
         switch (size) {
             case 1:
                 drink.setDrinkSize("Small");
+                price = 2.00;
                 break;
             case 2:
                 drink.setDrinkSize("Medium");
+                price = 2.50;
                 break;
             case 3:
                 drink.setDrinkSize("Large");
+                price = 3.00;
                 break;
-        }
-        if (drink.getDrinkSize().equalsIgnoreCase("Small")) {
-            price = 2.00;
-        } else if (drink.getDrinkSize().equalsIgnoreCase("Medium")) {
-            price = 2.50;
-        } else if (drink.getDrinkSize().equalsIgnoreCase("Large")) {
-            price = 3.00;
         }
 
         // set the price for the drink
@@ -72,6 +80,8 @@ public class Drinks extends OrderItem {
 
         // add the drink to the order
         order.addItemToOrder(drink);
+
+        System.out.println("You selected a: " + drink.getDrinkSize() + " " + drink.getDrinkName());
 
     }
 
@@ -84,7 +94,8 @@ public class Drinks extends OrderItem {
 
     @Override
     public String toString() {
-        return "Drinks:\n" +
-                "Drink Size: " + drinkSize;
+        return "Drink: " + drinkName + "\n" +
+                "Drink Size: " + drinkSize + "\n" +
+                "Price: $" + price + "\n";
     }
 }

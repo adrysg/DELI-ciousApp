@@ -121,7 +121,6 @@ public class Sandwich extends OrderItem {
    }
 
     public static void addSandwichToOrder(Order order) {
-        double price = 0;
 
         System.out.println("What size would you like your sandwich?");
         System.out.println("1) 4in");

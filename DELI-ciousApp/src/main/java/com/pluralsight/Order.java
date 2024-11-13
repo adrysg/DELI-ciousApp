@@ -5,31 +5,38 @@ import java.util.List;
 
 public class Order {
 
-    private List<OrderItem> items;
     private double orderTotal;
+    private List<OrderItem> items; //this will store all order items in a list
 
-    public void Order(){
-        items = new ArrayList<>();
-        orderTotal = getOrderTotal();
+    //creating a sandwich constructor
+
+    public Order(){
+        this.items = new ArrayList<>();
     }
 
     public void addItemToOrder(OrderItem item){
         items.add(item);
-        orderTotal += item.getCost();
     }
 
-    public double getOrderTotal() {
-        double orderTotal = 0;
-        for (OrderItem item : items){
-            orderTotal += item.getCost();
+    // method to calculate the total of all order items
+    private double calculateOrderTotal(){
+        double total = 0;
+        for(OrderItem item : items){
+            total += item.getCost(); //adding the cost of each item in the order
         }
-        return orderTotal;
+        return total;
     }
 
     @Override
     public String toString() {
-        return "Order\n" +
-                "items: " + items +
-                "Order total: " + orderTotal;
+        StringBuilder orderDetails = new StringBuilder("Order Details: \n");
+
+        for (OrderItem item : items){
+            orderDetails.append(item.toString()).append("\n");
+        }
+
+        orderDetails.append("Order Total: $" + orderTotal + "\n");
+
+        return orderDetails.toString();
     }
 }

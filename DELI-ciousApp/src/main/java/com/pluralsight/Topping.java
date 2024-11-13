@@ -51,13 +51,14 @@ public class Topping extends OrderItem {
             }
             System.out.print("Selection: ");
             int selection = Integer.parseInt(scanner.nextLine());
-            System.out.println("----------------");
+
 
             //adding selected meat to sandwich
             if (selection > 0 && selection <= MenuItems.meats.length) {
                 String selectedMeat = MenuItems.meats[selection - 1]; // Get the selected meat
                 sandwich.addMeat(selectedMeat);
                 System.out.println("You selected: " + selectedMeat);
+                System.out.println("---------------------------");
             } else {
                 System.out.println("Invalid selection. Please try again.");
             }
@@ -84,13 +85,14 @@ public class Topping extends OrderItem {
             }
             System.out.print("Selection: ");
             int selection = Integer.parseInt(scanner.nextLine());
-            System.out.println("----------------");
+
 
             //adding selected cheese to sandwich
             if (selection > 0 && selection <= MenuItems.cheeses.length) {
                 String selectedCheese = MenuItems.cheeses[selection - 1]; // Get the selected cheese
                 sandwich.addCheese(selectedCheese);
                 System.out.println("You selected: " + selectedCheese);
+                System.out.println("---------------------------------");
             } else {
                 System.out.println("Invalid selection. Please try again.");
             }
@@ -116,13 +118,14 @@ public class Topping extends OrderItem {
             }
             System.out.print("Selection: ");
             int selection = Integer.parseInt(scanner.nextLine());
-            System.out.println("----------------");
+
 
             //adding selected sauce to sandwich
             if (selection > 0 && selection <= MenuItems.sauces.length) {
                 String selectedSauce = MenuItems.sauces[selection - 1]; // Get the selected sauce
                 sandwich.addSauce(selectedSauce);
                 System.out.println("You selected: " + selectedSauce);
+                System.out.println("-----------------------------");
             } else {
                 System.out.println("Invalid selection. Please try again.");
             }
@@ -140,6 +143,11 @@ public class Topping extends OrderItem {
         System.out.println("Your sandwich total is: " + totalCost);
 
         Main.displayCheckout();
+    }
+
+    @Override
+    public String toString() {
+        return "Toppings: \n";
     }
 
     @Override
