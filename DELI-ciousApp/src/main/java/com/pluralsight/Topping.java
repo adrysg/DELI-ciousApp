@@ -9,40 +9,44 @@ public class Topping extends OrderItem {
     static void displayRegularToppings(Sandwich sandwich) {
         while (true) {
             System.out.println("Please select your toppings: ");
+            System.out.println("If you'd like multiple, please separate by commas");
 
             //listing all the toppings options
             for (int i = 0; i < MenuItems.regToppings.length; i++) {
                 System.out.println(i + 1 + ") " + MenuItems.regToppings[i]);
             }
             System.out.print("Selection: ");
-            int selection = Integer.parseInt(scanner.nextLine());
+            String[] selection = scanner.nextLine().split(",");
 
-            //adding selection to sandwich instance
-            if (selection >= 0 && selection <= MenuItems.regToppings.length) {
-                String toppingSelection = MenuItems.regToppings[selection - 1]; //getting selected topping
-                sandwich.addTopping(toppingSelection);
-                System.out.println("You selected: " + toppingSelection);
-            } else {
-                System.out.println("Invalid selection. Please try again.");
+            for (String selectionInt : selection) {
+
+                //adding selection to sandwich instance
+                if (Integer.parseInt(selectionInt) >= 0 && Integer.parseInt(selectionInt) <= MenuItems.regToppings.length) {
+                    String toppingSelection = MenuItems.regToppings[Integer.parseInt(selectionInt) - 1]; //getting selected topping
+                    sandwich.addTopping(toppingSelection);
+                    System.out.println("You selected: " + toppingSelection);
+                } else {
+                    System.out.println("Invalid selection. Please try again.");
+                }
+
+//            //asking user if they'd like to add more toppings
+//            System.out.println("----------------");
+//            System.out.print("Would you like to add more (Y or N)?: ");
+//            String choice = scanner.nextLine();
+//
+//            //exiting loop if user doesn't want to add more toppings
+//            if (!choice.equalsIgnoreCase("Y")) {
+//
+//            }
             }
-
-            //asking user if they'd like to add more toppings
-            System.out.println("----------------");
-            System.out.print("Would you like to add more (Y or N)?: ");
-            String choice = scanner.nextLine();
-
-            //exiting loop if user doesn't want to add more toppings
-            if (!choice.equalsIgnoreCase("Y")) {
-                break;
-            }
+            break;
         }
-
         displayMeats(sandwich);
     }
 
     //method displaying available meats to add to sandwich
     static void displayMeats(Sandwich sandwich) {
-        while (true) {
+        while (true){
             System.out.println("Please select your meat: ");
 
             //looping through the list of meats and displaying it to the customer so they can make a selection
@@ -51,7 +55,6 @@ public class Topping extends OrderItem {
             }
             System.out.print("Selection: ");
             int selection = Integer.parseInt(scanner.nextLine());
-
 
             //adding selected meat to sandwich
             if (selection > 0 && selection <= MenuItems.meats.length) {
@@ -71,6 +74,7 @@ public class Topping extends OrderItem {
                 sandwich.addExtraMeat(); //applying extra charge by calling this method
             }
             displayCheeses(sandwich);
+            break;
         }
     }
 
@@ -105,11 +109,12 @@ public class Topping extends OrderItem {
                 sandwich.addExtraCheese(); //applying extra charge by calling this method
             }
             displaySauces(sandwich);
+            break;
         }
     }
 
     static void displaySauces(Sandwich sandwich) {
-        while (true) {
+        while (true){
             System.out.println("Please select your sauce");
 
             //looping through the list of sauces available
@@ -134,15 +139,15 @@ public class Topping extends OrderItem {
             System.out.print("Would you like to add more (Y or N)?: ");
             String choice = scanner.nextLine();
             System.out.println("-------------------------------------");
-            if (!choice.equalsIgnoreCase("Y")) {
-                break;
-            }
-        }
-        //calculating total of all selections
-        double totalCost = sandwich.getCost();
-        System.out.println("Your sandwich total is: " + totalCost);
+            if (choice.equalsIgnoreCase("Y")) {
 
-        Main.displayCheckout();
+
+            }
+            //calculating total of all selections
+            double totalCost = sandwich.getCost();
+            System.out.println("Your sandwich total is: " + totalCost);
+            break;
+        }
     }
 
     @Override

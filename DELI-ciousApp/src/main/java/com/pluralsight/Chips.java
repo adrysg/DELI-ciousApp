@@ -57,6 +57,7 @@ public class Chips extends OrderItem {
     @Override
     public String toString() {
         return "Chips: \n" +
-                "Chip type: " + type ;
+                "Chip type: " + type + "\n Chips Total: "
+        + getCost();
     }
 }

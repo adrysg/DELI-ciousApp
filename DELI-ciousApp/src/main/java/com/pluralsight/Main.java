@@ -5,20 +5,19 @@ import java.util.Scanner;
 public class Main {
 
     static Scanner scanner = new Scanner(System.in);
-    static Order order = new Order();
 
     //This main class serves as my user interface.
 
     public static void main(String[] args) {
-
         homeScreen();
-        orderScreen();
-
+       // orderScreen();
     }
 
     public static void homeScreen() {
         int selection;
-        do {
+        boolean isRunning = true;
+
+        while(isRunning) {
             System.out.println("\n Welcome to DELI-cious Sandwich, how can we help you?");
             System.out.println("-------------------------------------------------------");
             System.out.println("1) New Order ");
@@ -30,16 +29,19 @@ public class Main {
             switch (selection) {
                 case 1:
                     orderScreen(); //go to order screen
-                case 0: {
+                    break;
+                case 0:
                     System.out.println("Have a nice day!");
-                    return;
-                }
+                    isRunning = false;
+                 break;
             }
-        } while (true);
+        }
     }
 
     static void orderScreen() {
         int selection;
+        Order order = new Order();
+
         do {
             System.out.println("What would you like to order?");
             System.out.println("1) Sandwich");
@@ -62,11 +64,11 @@ public class Main {
                     Chips.addChipsToOrder(order);
                     break;
                 case 4:
-                    displayCheckout();
+                    displayCheckout(order);
                     break;
                 case 0:
                     System.out.println("Your order has been cancelled.");
-                    break;
+                    return;
                 default:
                     System.out.println("Sorry, invalid option");
             }
@@ -75,7 +77,7 @@ public class Main {
 
     }
 
-    static void displayCheckout() {
+    static void displayCheckout(Order order) {
         System.out.println("\n Checkout: ");
         System.out.println("--------------------");
 
@@ -89,7 +91,7 @@ public class Main {
         System.out.print("Enter selection: ");
         String answer = scanner.nextLine();
 
-        if(answer.equals("1")) {
+        if (answer.equals("1")) {
             //saving order receipt
             try {
                 new ReceiptFileManager(order); //saving order as a receipt
@@ -97,9 +99,10 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("There was an error saving your receipt.");
             }
-        } else if (answer.equals("2")){
-                System.out.println("Your order has been cancelled.");
-            }
+        } else if (answer.equals("2")) {
+            System.out.println("Your order has been cancelled.");
+        }
+
 
     }
 

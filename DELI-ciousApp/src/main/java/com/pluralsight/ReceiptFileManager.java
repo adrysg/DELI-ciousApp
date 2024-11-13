@@ -1,11 +1,11 @@
 package com.pluralsight;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import static com.pluralsight.Order.*;
 
 public class ReceiptFileManager {
     //save order details in a receipts folder
@@ -24,8 +24,19 @@ public class ReceiptFileManager {
             //assign formatted date to file name
             String fileName = "receipts/" + formattedDate + ".txt";
 
+            File receiptsDirectory = new File("receipts");
+            if (!receiptsDirectory.exists()) {
+                if (receiptsDirectory.mkdir()) {
+                    System.out.println("Receipts directory created.");
+                } else {
+                    System.out.println("Failed to create receipts directory.");
+                    return;
+                }
+            }
+
+
             // using a file writer to create and write order details to a file
-            FileWriter fw = new FileWriter(fileName, true);
+            FileWriter fw = new FileWriter(fileName, false);
             fw.write(order.toString());
 
             // printing confirmation

@@ -1,6 +1,5 @@
 package com.pluralsight;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import static com.pluralsight.Main.scanner;
@@ -170,11 +169,11 @@ public class Sandwich extends OrderItem {
                 breadType = "Wrap";
                 break;
         }
-        Topping.displayRegularToppings(sandwich);
         order.addItemToOrder(sandwich);
 
 //have user select toppings
-        do {
+        boolean isAdding = true;
+        while (isAdding) {
             System.out.println("What toppings would you like?");
             System.out.println("Note: Meats and Cheeses are considered premium toppings");
             System.out.println("1) Regular");
@@ -199,7 +198,9 @@ public class Sandwich extends OrderItem {
                     break;
             }
 
-        } while (false);
+            isAdding = false;
+
+        }
 
     }
 
@@ -211,7 +212,10 @@ public class Sandwich extends OrderItem {
                 "isToasted: " + isToasted + "\n" +
                 "Toppings: " + toppings + "\n" +
                 "Meats: " + meats + "\n" +
-                "Cheeses: " + cheeses;
+                "Cheeses: " + cheeses
+
+                +
+                "\n Order Total: " + getCost();
 
     }
 

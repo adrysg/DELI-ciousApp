@@ -1,0 +1,14 @@
+Order Details: 
+Sandwich: Bread type: White
+Bread size: 8
+isToasted: false
+Toppings: []
+Meats: [Steak]
+Cheeses: [American]
+Drink: Pepsi
+Drink Size: Small
+Price: $2.0
+
+Chips: 
+Chip type: Lays
+Order Total: $0.0

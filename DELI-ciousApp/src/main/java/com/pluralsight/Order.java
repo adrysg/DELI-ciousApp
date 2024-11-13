@@ -20,11 +20,11 @@ public class Order {
 
     // method to calculate the total of all order items
     private double calculateOrderTotal(){
-        double total = 0;
+         orderTotal = 0;
         for(OrderItem item : items){
-            total += item.getCost(); //adding the cost of each item in the order
+            orderTotal += item.getCost(); //adding the cost of each item in the order
         }
-        return total;
+return  orderTotal;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class Order {
             orderDetails.append(item.toString()).append("\n");
         }
 
-        orderDetails.append("Order Total: $" + orderTotal + "\n");
+        orderDetails.append("Order Total: $" + calculateOrderTotal() + "\n");
 
         return orderDetails.toString();
     }

@@ -1,0 +1,16 @@
+Order Details: 
+Sandwich: Bread type: White
+Bread size: 8
+isToasted: false
+Toppings: [lettuce, peppers, Onions]
+Meats: [Steak]
+Cheeses: [American]
+ Order Total: 12.1
+Drink: Pepsi
+Drink Size: Small
+Price: $2.0
+
+Chips: 
+Chip type: Doritos
+ Chips Total: 1.5
+Order Total: $0.0
