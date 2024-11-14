@@ -55,8 +55,9 @@ public class Drinks extends OrderItem {
         for (int i = 0; i < MenuItems.drinks.length; i++) {
             System.out.println(i + 1 + ") " + MenuItems.drinks[i]);
         }
-        System.out.print("Enter selection: ");
+        System.out.print("\nEnter selection: ");
         int selection = Integer.parseInt(scanner.nextLine());
+        System.out.println("---------------------------------------------");
         drink.setDrinkName(MenuItems.drinks[selection - 1]); //setting drink name based on selection
 
     //asking for drink size
@@ -64,9 +65,8 @@ public class Drinks extends OrderItem {
         System.out.println("1) Small");
         System.out.println("2) Medium");
         System.out.println("3) Large");
-        System.out.print("Size selection: ");
+        System.out.print("\nSize selection: ");
         int size = Integer.parseInt(scanner.nextLine());
-        System.out.println("--------------------------");
 
         // set drink size based on selection
         switch (size) {
@@ -91,8 +91,8 @@ public class Drinks extends OrderItem {
         order.addItemToOrder(drink);
 
         //give confirmation to user
-        System.out.println("You selected a " + drink.getDrinkSize() + " " + drink.getDrinkName() + " for the price of $" + drink.getCost());
-
+        System.out.println("\nYou selected a " + drink.getDrinkSize() + " " + drink.getDrinkName() + " for the price of $" + drink.getCost());
+        System.out.println("-----------------------------------------------------------------");
     }
 
     @Override
@@ -104,8 +104,8 @@ public class Drinks extends OrderItem {
 
     @Override
     public String toString() {
-        return "Drink: " + drinkName + "\n" +
-                "Drink Size: " + drinkSize + "\n" +
-                "Price: $" + price + "\n";
+        return "\nDrink: " + drinkName +
+                "\nDrink Size: " + drinkSize +
+                "\nPrice: $" + price;
     }
 }

@@ -44,7 +44,7 @@ public class Order {
         }
 
         //adding the total cost of the order to the summary
-        orderDetails.append("Order Total: $" + calculateOrderTotal() + "\n");
+        orderDetails.append("\nOrder Total: $" + calculateOrderTotal() + "\n");
 
         //returning a converted StringBuilder into a single string
         return orderDetails.toString();

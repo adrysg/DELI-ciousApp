@@ -24,15 +24,6 @@ public class ReceiptFileManager {
             //assign formatted date to file name
             String fileName = "receipts/" + formattedDate + ".txt";
 
-//            File receiptsDirectory = new File("receipts");
-//            if (!receiptsDirectory.exists()) {
-//                if (receiptsDirectory.mkdir()) {
-//                    System.out.println("Receipts directory created.");
-//                } else {
-//                    System.out.println("Failed to create receipts directory.");
-//                    return;
-//                }
-//            }
 
             // using a file writer to create and write order details to a file
             FileWriter fw = new FileWriter(fileName, false);

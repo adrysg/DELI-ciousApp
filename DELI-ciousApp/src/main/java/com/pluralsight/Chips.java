@@ -43,14 +43,15 @@ public class Chips extends OrderItem {
             System.out.println(i + 1 + ") " + MenuItems.chips[i]);
         }
         //getting the user's selection
-        System.out.print("Enter selection: ");
+        System.out.print("\nEnter selection: ");
         int selection = Integer.parseInt(scanner.nextLine());
 
         //checking for the user's selection
         if (selection > 0 && selection <= MenuItems.chips.length) {
             chips.setType(MenuItems.chips[selection - 1]);
             order.addItemToOrder(chips);  // Adding the chips to the order
-            System.out.println("You selected: " + chips.getType() + "for the price of $" + chips.price);
+            System.out.println("\nYou selected: " + chips.getType() + " for the price of $" + chips.price);
+            System.out.println("-------------------------------------------------------------------");
         } else {
             System.out.println("Invalid selection.");
         }
@@ -67,6 +68,6 @@ public class Chips extends OrderItem {
     public String toString() {
         return "Chips: \n" +
                 "Chip type: " + type +
-                "\n Chips Total: " + getCost();
+                "\nChips Total: " + getCost();
     }
 }

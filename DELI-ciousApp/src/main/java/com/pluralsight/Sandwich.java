@@ -113,11 +113,11 @@ public class Sandwich extends OrderItem {
         System.out.println("1) 4in");
         System.out.println("2) 8in");
         System.out.println("3) 12in");
-        System.out.print("Enter Selection: ");
+        System.out.print("\nEnter Selection: ");
 
         //use scanner to get user input
         int selection = Integer.parseInt(scanner.nextLine());
-        System.out.println("-------------------------");
+        System.out.println("-------------------------------------------------------------------");
 
         // add switch statement for bread size selection
         switch (selection) {
@@ -141,9 +141,9 @@ public class Sandwich extends OrderItem {
         System.out.println("2) Wheat");
         System.out.println("3) Rye");
         System.out.println("4) Wrap");
-        System.out.print("Enter selection: ");
+        System.out.print("\nEnter selection: ");
         selection = Integer.parseInt(scanner.nextLine());
-        System.out.println("--------------------");
+        System.out.println("-------------------------------------------------------------------");
         switch (selection) {
             case 1:
                 breadType = "White";
@@ -160,18 +160,28 @@ public class Sandwich extends OrderItem {
         }
         order.addItemToOrder(sandwich);
 
+        System.out.print("Would you like your sandwich toasted? (Y or N): ");
+        String answer = scanner.nextLine();
+        System.out.println("-------------------------------------------------------------------");
+        if(answer.equalsIgnoreCase("Y")){
+            sandwich.isToasted = true;
+        }
+        else if (answer.equalsIgnoreCase("N")){
+            sandwich.isToasted = false;
+        }
+
         //have user select toppings, meats and cheese
         boolean isAdding = true;
         while (isAdding) {
-            System.out.println("Please select your toppings");
+            System.out.println("Please select your toppings \n");
             System.out.println("Note: You will select toppings in the same order below,\n" +
-                    "Meats and cheese are considered premium.\n");
+                    "Meats and cheese are considered premium.");
             System.out.println("1) Regular");
             System.out.println("2) Meats");
             System.out.println("3) Cheese");
-            System.out.print("Enter Selection: ");
+            System.out.print("\nEnter Selection: ");
             selection = Integer.parseInt(scanner.nextLine());
-            System.out.println("--------------------");
+            System.out.println("-------------------------------------------------------------------");
 
             switch (selection) {
                 case 1:
@@ -197,8 +207,8 @@ public class Sandwich extends OrderItem {
     //returns a formatted string of the sandwich, including the details
     @Override
     public String toString() {
-        return "Sandwich: " +
-                "Bread type: " + breadType + "\n" +
+        return "\nSandwich: " +
+                "\nBread type: " + breadType + "\n" +
                 "Bread size: " + breadSize + "\n" +
                 "isToasted: " + isToasted + "\n" +
                 "Toppings: " + toppings + "\n" +
@@ -206,7 +216,7 @@ public class Sandwich extends OrderItem {
                 "Cheeses: " + cheeses
 
                 +
-                "\n Order Total: " + getCost();
+                "\nOrder Total: " + getCost();
 
     }
 

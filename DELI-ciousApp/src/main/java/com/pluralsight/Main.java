@@ -19,12 +19,12 @@ public class Main {
 
         while(isRunning) {
             System.out.println("\n Welcome to DELI-cious Sandwich, how can we help you?");
-            System.out.println("-------------------------------------------------------");
+            System.out.println("-------------------------------------------------------------------");
             System.out.println("1) New Order ");
             System.out.println("0) Exit ");
-            System.out.print("Enter selection: ");
+            System.out.print("\nEnter selection: ");
             selection = Integer.parseInt(scanner.nextLine());
-            System.out.println("----------------------");
+            System.out.println("-------------------------------------------------------------------");
 
             switch (selection) {
                 case 1:
@@ -34,6 +34,10 @@ public class Main {
                     System.out.println("Have a nice day!");
                     isRunning = false;
                  break;
+
+                default:
+                    System.out.println("Invalid input, please try again");
+                    return;
             }
         }
     }
@@ -50,9 +54,9 @@ public class Main {
             System.out.println("3) Chips");
             System.out.println("4) Checkout");
             System.out.println("0) Cancel Order");
-            System.out.print("Enter selection: ");
+            System.out.print("\nEnter selection: ");
             selection = Integer.parseInt(scanner.nextLine());
-            System.out.println("---------------------");
+            System.out.println("-------------------------------------------------------------------");
 
             //calling different methods based on user selection
             switch (selection) {
@@ -82,17 +86,17 @@ public class Main {
 //this method is my checkout screen, it displays the order details and saves a receipt file
     static void displayCheckout(Order order) {
         System.out.println("\n Checkout: ");
-        System.out.println("--------------------");
+        System.out.println("-------------------------------------------------------------------");
 
 
         //displaying order details and total
         System.out.println(order.toString());
 
         //asking user to confirm or cancel an order
-        System.out.println("--------------------");
+        System.out.println("-------------------------------------------------------------------");
         System.out.println("1) Confirm");
         System.out.println("2) Cancel");
-        System.out.print("Enter selection: ");
+        System.out.print("\nEnter selection: ");
         String answer = scanner.nextLine();
 
         if (answer.equals("1")) {
