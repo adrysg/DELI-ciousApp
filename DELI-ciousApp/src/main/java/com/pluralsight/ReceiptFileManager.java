@@ -34,7 +34,6 @@ public class ReceiptFileManager {
                 }
             }
 
-
             // using a file writer to create and write order details to a file
             FileWriter fw = new FileWriter(fileName, false);
             fw.write(order.toString());

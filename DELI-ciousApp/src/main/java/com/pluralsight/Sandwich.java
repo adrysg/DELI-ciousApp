@@ -158,8 +158,9 @@ public class Sandwich extends OrderItem {
 //have user select toppings
         boolean isAdding = true;
         while (isAdding) {
-            System.out.println("What toppings would you like?");
-            System.out.println("Note: Meats and Cheeses are considered premium toppings");
+            System.out.println("Please select your toppings");
+            System.out.println("Note: You will select toppings in the same order below,\n" +
+                    "Meats and cheese are considered premium.\n");
             System.out.println("1) Regular");
             System.out.println("2) Meats");
             System.out.println("3) Cheese");

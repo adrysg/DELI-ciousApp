@@ -42,7 +42,7 @@ public class Main {
         Order order = new Order();
 
         do {
-            System.out.println("What would you like to order?");
+            System.out.println("Please make a selection");
             System.out.println("1) Sandwich");
             System.out.println("2) Drink");
             System.out.println("3) Chips");
@@ -101,7 +101,6 @@ public class Main {
         } else if (answer.equals("2")) {
             System.out.println("Your order has been cancelled.");
         }
-
 
     }
 

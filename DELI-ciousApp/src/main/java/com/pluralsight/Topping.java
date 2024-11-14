@@ -9,7 +9,7 @@ public class Topping extends OrderItem {
     static void displayRegularToppings(Sandwich sandwich) {
         while (true) {
             System.out.println("Please select your toppings: ");
-            System.out.println("If you'd like multiple, please separate by commas");
+            System.out.println("(If you'd like multiple, please separate by commas)");
 
             //listing all the toppings options
             for (int i = 0; i < MenuItems.regToppings.length; i++) {
@@ -24,7 +24,7 @@ public class Topping extends OrderItem {
                 if (Integer.parseInt(selectionInt) >= 0 && Integer.parseInt(selectionInt) <= MenuItems.regToppings.length) {
                     String toppingSelection = MenuItems.regToppings[Integer.parseInt(selectionInt) - 1]; //getting selected topping
                     sandwich.addTopping(toppingSelection);
-                    System.out.println("You selected: " + toppingSelection);
+                    System.out.print("You selected: " + toppingSelection);
                 } else {
                     System.out.println("Invalid selection. Please try again.");
                 }
@@ -105,7 +105,8 @@ public class Topping extends OrderItem {
 
     static void displaySauces(Sandwich sandwich) {
         while (true){
-            System.out.println("Please select your sauce");
+            System.out.println("Please select your sauces");
+            System.out.println("(If you'd like multiple, please separate by commas)");
 
             //looping through the list of sauces available
             for (int i = 0; i < MenuItems.regToppings.length; i++) {
@@ -120,7 +121,7 @@ public class Topping extends OrderItem {
                 if (Integer.parseInt(selectionInt) >= 0 && Integer.parseInt(selectionInt) <= MenuItems.regToppings.length) {
                     String toppingSelection = MenuItems.regToppings[Integer.parseInt(selectionInt) - 1]; //getting selected topping
                     sandwich.addTopping(toppingSelection);
-                    System.out.println("You selected: " + toppingSelection);
+                    System.out.print("You selected: " + toppingSelection);
                 } else {
                     System.out.println("Invalid selection. Please try again.");
                 }
