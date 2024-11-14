@@ -9,7 +9,7 @@ public class Main {
     //This main class serves as my user interface, here is my home screen, order screen and checkout screen
 
     public static void main(String[] args) {
-        homeScreen();
+       homeScreen();
     }
 
 //this method is my home screen
