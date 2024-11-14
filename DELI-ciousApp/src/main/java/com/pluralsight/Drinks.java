@@ -2,47 +2,56 @@ package com.pluralsight;
 
 import static com.pluralsight.Main.scanner;
 
+//This class represents a drink item in an order, it contains size, name and price properties
 public class Drinks extends OrderItem {
 
-    private double price;
-    private String drinkSize;
-    private String drinkName;
 
-    public Drinks(String drinkSize, String drinkName) {
-        this.drinkSize = drinkSize;
-        this.drinkName = drinkName;
-    }
+    private double price; //price varies by size
+    private String drinkSize; //sizes offered are small, medium and large
+    private String drinkName; //i.e., Sprite, Pepsi, Coca-cola, etc...
 
+
+
+    //default constructor
     public Drinks() {
     }
 
+    //this method gets the drink size
     public String getDrinkSize() {
         return drinkSize;
     }
 
+    //this method sets the drink size
     public void setDrinkSize(String drinkSize) {
         this.drinkSize = drinkSize;
     }
 
+    //this method gets the drink name
     public String getDrinkName(){
         return drinkName;
     }
 
+    //this method sets the drink name
     public void setDrinkName(String drinkName){
         this.drinkName = drinkName;
     }
 
+    //this method sets the price for the drink
     public void setPrice(double price){
         this.price = price;
     }
 
+    /*
+    * This static method prompts the user to make a selection, then adds the selected drink to the order
+    * in the Order class.
+    */
     static void addDrinkToOrder(Order order) {
         Drinks drink = new Drinks();
         double price = 0;
 
         System.out.println("What drink would you like to order? ");
 
-//looping through the list of drinks and displaying it to the customer so they can make a selection
+    //looping through the list of drinks and displaying it to the customer so they can make a selection
         for (int i = 0; i < MenuItems.drinks.length; i++) {
             System.out.println(i + 1 + ") " + MenuItems.drinks[i]);
         }
@@ -81,6 +90,7 @@ public class Drinks extends OrderItem {
         // add the drink to the order
         order.addItemToOrder(drink);
 
+        //give confirmation to user
         System.out.println("You selected a " + drink.getDrinkSize() + " " + drink.getDrinkName() + " for the price of $" + drink.getCost());
 
     }

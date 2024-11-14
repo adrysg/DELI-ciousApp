@@ -5,18 +5,25 @@ import java.util.ArrayList;
 import static com.pluralsight.Main.scanner;
 
 public class Sandwich extends OrderItem {
-    //list sandwich price based off size and bread type
+   //represents a sandwich being created by the user, containing parts of a sandwich like bread type, size and toppings
 
-    private static String breadType;
-    private static String breadSize;
-    private boolean isToasted;
-    private ArrayList<String> toppings;
-    private ArrayList<String> meats;
-    private ArrayList<String> cheeses;
-    private ArrayList<String> sauces;
+    private static String breadType; //i.e., white, wheat, wrap, etc.
 
-    private double basePrice;
+    private static String breadSize; //available in 4in, 8in, and 12in
 
+    private boolean isToasted; //whether the user wants a toasted sandwich or not
+
+    private ArrayList<String> toppings; //list of reg toppings
+
+    private ArrayList<String> meats; //list of meats added to sandwich
+
+    private ArrayList<String> cheeses; //list of cheeses
+
+    private ArrayList<String> sauces; //list of sauces
+
+    private double basePrice; //base price of sandwich based on size
+
+   //
    public Sandwich(String breadSize){
        this.breadSize = breadSize;
        this.toppings = new ArrayList<>();
@@ -99,9 +106,6 @@ public class Sandwich extends OrderItem {
        cheeses.add(cheese);
    }
 
-   public void addSauce(String sauce){
-       sauces.add(sauce);
-   }
 
     public static void addSandwichToOrder(Order order) {
 
@@ -115,7 +119,7 @@ public class Sandwich extends OrderItem {
         int selection = Integer.parseInt(scanner.nextLine());
         System.out.println("-------------------------");
 
-        // add switch statement
+        // add switch statement for bread size selection
         switch (selection) {
             case 1:
                 breadSize = "4";
@@ -129,8 +133,9 @@ public class Sandwich extends OrderItem {
             default:
                 System.out.println("Sorry invalid - Defaulting to an 8in. ");
         }
-        Sandwich sandwich = new Sandwich(breadSize);
+        Sandwich sandwich = new Sandwich(breadSize); //created a sandwich object
 
+        //prompt for bread type
         System.out.println("What kind of bread would you like?");
         System.out.println("1) White");
         System.out.println("2) Wheat");
@@ -155,7 +160,7 @@ public class Sandwich extends OrderItem {
         }
         order.addItemToOrder(sandwich);
 
-//have user select toppings
+        //have user select toppings, meats and cheese
         boolean isAdding = true;
         while (isAdding) {
             System.out.println("Please select your toppings");
@@ -189,6 +194,7 @@ public class Sandwich extends OrderItem {
 
     }
 
+    //returns a formatted string of the sandwich, including the details
     @Override
     public String toString() {
         return "Sandwich: " +
@@ -204,6 +210,7 @@ public class Sandwich extends OrderItem {
 
     }
 
+    //calculates and returns total price of sandwich based on user selections
     @Override
     public double getCost() {
         double totalPrice = basePrice;

@@ -6,12 +6,13 @@ public class Main {
 
     static Scanner scanner = new Scanner(System.in);
 
-    //This main class serves as my user interface.
+    //This main class serves as my user interface, here is my home screen, order screen and checkout screen
 
     public static void main(String[] args) {
         homeScreen();
     }
 
+//this method is my home screen
     public static void homeScreen() {
         int selection;
         boolean isRunning = true;
@@ -37,6 +38,7 @@ public class Main {
         }
     }
 
+    //this method is where the user can begin their order, it calls other methods depending on user selection
     static void orderScreen() {
         int selection;
         Order order = new Order();
@@ -52,6 +54,7 @@ public class Main {
             selection = Integer.parseInt(scanner.nextLine());
             System.out.println("---------------------");
 
+            //calling different methods based on user selection
             switch (selection) {
                 case 1:
                     Sandwich.addSandwichToOrder(order);
@@ -76,6 +79,7 @@ public class Main {
 
     }
 
+//this method is my checkout screen, it displays the order details and saves a receipt file
     static void displayCheckout(Order order) {
         System.out.println("\n Checkout: ");
         System.out.println("--------------------");
@@ -84,6 +88,7 @@ public class Main {
         //displaying order details and total
         System.out.println(order.toString());
 
+        //asking user to confirm or cancel an order
         System.out.println("--------------------");
         System.out.println("1) Confirm");
         System.out.println("2) Cancel");
@@ -98,9 +103,11 @@ public class Main {
             } catch (Exception e) {
                 System.out.println("There was an error saving your receipt.");
             }
+            //confirming cancellation
         } else if (answer.equals("2")) {
             System.out.println("Your order has been cancelled.");
         }
+
 
     }
 
