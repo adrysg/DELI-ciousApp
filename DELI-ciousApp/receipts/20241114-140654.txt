@@ -1,0 +1,21 @@
+Order Details: 
+
+Sandwich: 
+Bread type: White
+Bread size: 8
+Toasted: true
+Toppings: [lettuce, peppers, Onions, Tomatoes, Mayo, Ketchup]
+Meats: [Chicken]
+Cheese: [Cheddar]
+Sandwich Total: 11.5
+
+Drinks: 
+Drink Flavor: Sprite
+Drink Size: Medium
+Price: $2.5
+
+Chips: 
+Chip type: Doritos
+Price: $1.5
+
+Order Total: $15.5

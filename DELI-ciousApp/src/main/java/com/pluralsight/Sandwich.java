@@ -208,15 +208,15 @@ public class Sandwich extends OrderItem {
     @Override
     public String toString() {
         return "\nSandwich: " +
-                "\nBread type: " + breadType + "\n" +
-                "Bread size: " + breadSize + "\n" +
-                "isToasted: " + isToasted + "\n" +
-                "Toppings: " + toppings + "\n" +
-                "Meats: " + meats + "\n" +
-                "Cheeses: " + cheeses
+                "\nBread type: " + breadType +
+                "\nBread size: " + breadSize +
+                "\nToasted: " + isToasted +
+                "\nToppings: " + toppings +
+                "\nMeats: " + meats +
+                "\nCheese: " + cheeses
 
                 +
-                "\nOrder Total: " + getCost();
+                "\nSandwich Total: " + getCost();
 
     }
 
