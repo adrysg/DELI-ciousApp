@@ -33,15 +33,6 @@ public class Sandwich extends OrderItem {
        setBasePrice(breadSize);
    }
 
-    public void setBreadSize(String breadSize) {
-        this.breadSize = breadSize;
-        setBasePrice(breadSize);
-    }
-
-    public void setBreadType(String breadType) {
-        Sandwich.breadType = breadType;
-    }
-
     //setting base price based on sandwich size
    private void setBasePrice(String breadSize){
        switch (breadSize){
@@ -57,10 +48,6 @@ public class Sandwich extends OrderItem {
 
        }
    }
-
-    public double getBasePrice() {
-        return basePrice;
-    }
 
     //calculating cost of extra meat based on size
     public void addExtraMeat(){

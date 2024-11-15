@@ -100,8 +100,6 @@ public class Drinks extends OrderItem {
         return price;
     }
 
-
-
     @Override
     public String toString() {
         return "\nDrinks: " +
